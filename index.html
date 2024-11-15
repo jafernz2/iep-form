@@ -66,86 +66,32 @@
         .form-group input[type="date"] {
             width: auto;
         }
-
-        /* Modal (Dialog) Styles */
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1; 
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4); 
-            padding-top: 60px;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
+        .info-section {
+            background-color: #f9f9f9;
+            padding: 15px;
             border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
         }
-
-        .modal-header {
+        .info-section h2 {
             font-size: 20px;
-            font-weight: bold;
+            margin-bottom: 10px;
         }
-
-        .modal-body {
-            margin-top: 15px;
+        .info-section p {
             font-size: 16px;
-        }
-
-        .modal-footer {
-            margin-top: 20px;
-            text-align: right;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Individualized Education Plan (IEP) Form</h1>
-        
-        <!-- Button to Open the Modal -->
-        <div class="form-group">
-            <button type="button" onclick="openModal()">Click for Important Information About This Document</button>
-        </div>
 
-        <!-- Modal (Dialog) -->
-        <div id="iepModal" class="modal">
-            <div class="modal-content">
-                <div class="modal-header">
-                    IEP Document Information
-                    <span class="close" onclick="closeModal()">&times;</span>
-                </div>
-                <div class="modal-body">
-                    <p>This is an Individualized Education Plan (IEP) document created for Inferno Schools. This document is designed to meet the standards set by the Missouri Department of Elementary and Secondary Education (DESE) for IEPs. It outlines the educational goals, services, and accommodations for the student.</p>
-                    <p><strong>Confidentiality Notice:</strong> This is a confidential document containing sensitive information about the student's educational needs. It should only be shared with authorized personnel involved in the student's education and care.</p>
-                    <p>Please ensure that the information contained within this document is handled appropriately and in compliance with confidentiality laws and school policies.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" onclick="closeModal()">Close</button>
-                </div>
-            </div>
+        <!-- Information Section -->
+        <div class="info-section">
+            <h2>Important Information about this IEP Document</h2>
+            <p>This is an Individualized Education Plan (IEP) document created for Inferno Schools. It is designed to meet the standards set by the Missouri Department of Elementary and Secondary Education (DESE) for IEPs. This document outlines the educational goals, services, and accommodations for the student.</p>
+            <p><strong>Confidentiality Notice:</strong> This is a confidential document containing sensitive information about the student's educational needs. It should only be shared with authorized personnel involved in the student's education and care.</p>
+            <p>Please ensure that the information contained within this document is handled appropriately and in compliance with confidentiality laws and school policies.</p>
         </div>
 
         <form action="#" method="post" id="iepForm">
@@ -233,3 +179,21 @@
                         <label for="adminDate">Date</label>
                         <input type="date" id="adminDate" name="adminDate" required>
                     </div>
+                </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="button" onclick="printForm()">Submit and Print</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function printForm() {
+            // Trigger the print dialog
+            window.print();
+        }
+    </script>
+</body>
+</html>
