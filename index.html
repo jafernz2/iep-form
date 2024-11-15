@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -51,6 +50,21 @@
         }
         .form-group button:hover {
             background-color: #45a049;
+        }
+        .signature-section {
+            border-top: 2px solid #ccc;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+        .signature-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .signature-group input {
+            width: 45%;
+        }
+        .form-group input[type="date"] {
+            width: auto;
         }
     </style>
 </head>
@@ -106,14 +120,43 @@
                 <textarea id="progressMonitoring" name="progressMonitoring" placeholder="Describe how progress will be monitored" required></textarea>
             </div>
 
-            <!-- Signatures Section -->
+            <!-- Case Manager Section -->
             <div class="form-group">
-                <label for="teacherSignature">Teacher's Name</label>
-                <input type="text" id="teacherSignature" name="teacherSignature" required>
+                <label for="caseManagerName">Case Manager's Name</label>
+                <input type="text" id="caseManagerName" name="caseManagerName" required>
             </div>
+
+            <!-- Administration Section -->
             <div class="form-group">
-                <label for="parentSignature">Parent/Guardian Signature</label>
-                <input type="text" id="parentSignature" name="parentSignature" required>
+                <label for="adminName">Administrator's Name</label>
+                <input type="text" id="adminName" name="adminName" required>
+            </div>
+            
+            <!-- Signature Page Section -->
+            <div class="signature-section">
+                <h3>Signatures</h3>
+                <div class="form-group signature-group">
+                    <div>
+                        <label for="parentSignature">Parent/Guardian Signature</label>
+                        <input type="text" id="parentSignature" name="parentSignature" required>
+                        <label for="parentDate">Date</label>
+                        <input type="date" id="parentDate" name="parentDate" required>
+                    </div>
+                    <div>
+                        <label for="caseManagerSignature">Case Manager's Signature</label>
+                        <input type="text" id="caseManagerSignature" name="caseManagerSignature" required>
+                        <label for="caseManagerDate">Date</label>
+                        <input type="date" id="caseManagerDate" name="caseManagerDate" required>
+                    </div>
+                </div>
+                <div class="form-group signature-group">
+                    <div>
+                        <label for="adminSignature">Administrator's Signature</label>
+                        <input type="text" id="adminSignature" name="adminSignature" required>
+                        <label for="adminDate">Date</label>
+                        <input type="date" id="adminDate" name="adminDate" required>
+                    </div>
+                </div>
             </div>
             
             <!-- Submit Button -->
