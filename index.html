@@ -57,7 +57,7 @@
 <body>
     <div class="container">
         <h1>Individualized Education Plan (IEP) Form</h1>
-        <form action="#" method="post">
+        <form action="#" method="post" id="iepForm">
             <!-- Student Information Section -->
             <div class="form-group">
                 <label for="studentName">Student Name</label>
@@ -118,9 +118,16 @@
             
             <!-- Submit Button -->
             <div class="form-group">
-                <button type="submit">Submit IEP</button>
+                <button type="button" onclick="printForm()">Submit and Print</button>
             </div>
         </form>
     </div>
+
+    <script>
+        function printForm() {
+            // Trigger the print dialog
+            window.print();
+        }
+    </script>
 </body>
 </html>
