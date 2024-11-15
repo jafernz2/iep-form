@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -96,6 +97,7 @@
 
         <form action="#" method="post" id="iepForm">
             <!-- Student Information Section -->
+            <h2>Student Information</h2>
             <div class="form-group">
                 <label for="studentName">Student Name</label>
                 <input type="text" id="studentName" name="studentName" required>
@@ -107,6 +109,18 @@
             <div class="form-group">
                 <label for="studentGrade">Grade Level</label>
                 <input type="text" id="studentGrade" name="studentGrade" required>
+            </div>
+            <div class="form-group">
+                <label for="studentID">Student ID Number</label>
+                <input type="text" id="studentID" name="studentID" required>
+            </div>
+            <div class="form-group">
+                <label for="enrollmentLocation">Enrollment Location</label>
+                <input type="text" id="enrollmentLocation" name="enrollmentLocation" required>
+            </div>
+            <div class="form-group">
+                <label for="schoolYear">School Year</label>
+                <input type="text" id="schoolYear" name="schoolYear" required>
             </div>
             
             <!-- Parent/Guardian Information -->
@@ -153,6 +167,17 @@
             <div class="form-group">
                 <label for="adminName">Administrator's Name</label>
                 <input type="text" id="adminName" name="adminName" required>
+            </div>
+
+            <!-- School Information Section -->
+            <h2>School Information</h2>
+            <div class="form-group">
+                <label for="districtCode">District Code</label>
+                <input type="text" id="districtCode" name="districtCode" value="99142" readonly>
+            </div>
+            <div class="form-group">
+                <label for="districtName">District Name</label>
+                <input type="text" id="districtName" name="districtName" value="Inferno School District" readonly>
             </div>
             
             <!-- Signature Page Section -->
