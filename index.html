@@ -241,4 +241,32 @@
             <div>
                 <label for="studentSignature">Student Signature:</label>
                 <div class="signature-line" id="studentSignature"></div>
-                <label for="studentName
+                <label for="studentNamePrinted">Student Name (Printed):</label>
+                <input type="text" id="studentNamePrinted" name="studentNamePrinted">
+
+                <label for="caseManagerSignature">Case Manager Signature:</label>
+                <div class="signature-line" id="caseManagerSignature"></div>
+                <label for="caseManagerName">Case Manager Name (Printed):</label>
+                <input type="text" id="caseManagerName" name="caseManagerName">
+
+                <label for="adminSignature">School Administrator Signature:</label>
+                <div class="signature-line" id="adminSignature"></div>
+                <label for="adminName">Administrator Name (Printed):</label>
+                <input type="text" id="adminName" name="adminName">
+            </div>
+        </div>
+
+        <div class="submit-container">
+            <button onclick="submitForm()">SUBMIT and PRINT</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to trigger printing the form
+        function submitForm() {
+            window.print();
+        }
+    </script>
+
+</body>
+</html>
