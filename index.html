@@ -22,7 +22,7 @@
 
         .form-container {
             width: 100%;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 20px;
             background-color: #fff;
@@ -43,7 +43,7 @@
             margin-top: 10px;
         }
 
-        input[type="text"], select, textarea {
+        input[type="text"], input[type="date"], select, textarea {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
@@ -140,6 +140,18 @@
 
         <div>
             <h2 class="section-title">Student Information</h2>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName">
+
+            <label for="middleName">Middle Name:</label>
+            <input type="text" id="middleName" name="middleName">
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName">
+
+            <label for="suffix">Suffix (Optional):</label>
+            <input type="text" id="suffix" name="suffix">
+
             <label for="studentId">Student ID Number:</label>
             <input type="text" id="studentId" name="studentId">
 
@@ -151,12 +163,30 @@
                 <option value="IEP">IEP</option>
                 <option value="504">504</option>
             </select>
+
+            <label for="dateCreated">Date Created:</label>
+            <input type="date" id="dateCreated" name="dateCreated">
+
+            <label for="dateImplementation">Date of Implementation:</label>
+            <input type="date" id="dateImplementation" name="dateImplementation">
+
+            <label for="reviewDate">Date to be Reviewed:</label>
+            <input type="date" id="reviewDate" name="reviewDate">
+        </div>
+
+        <div>
+            <h2 class="section-title">Educational Outcomes and Goals</h2>
+            <label for="educationalOutcomes">Educational Outcomes (Briefly Describe):</label>
+            <textarea id="educationalOutcomes" name="educationalOutcomes"></textarea>
+
+            <label for="goals">Educational Goals (List Specific Goals):</label>
+            <textarea id="goals" name="goals"></textarea>
         </div>
 
         <div>
             <h2 class="section-title">Accommodations</h2>
             <label for="accommodations">Select Accommodations (Multiple selection allowed):</label>
-            <select id="accommodations" name="accommodations[]" multiple size="10">
+            <select id="accommodations" name="accommodations[]" multiple size="12">
                 <option value="Extended Time">Extended Time</option>
                 <option value="Preferential Seating">Preferential Seating</option>
                 <option value="Note Taker">Note Taker</option>
@@ -169,8 +199,27 @@
                 <option value="Frequent Feedback">Frequent Feedback</option>
                 <option value="Visual Aids">Visual Aids</option>
                 <option value="Reduced Distractions">Reduced Distractions</option>
+                <option value="Frequent Check-ins">Frequent Check-ins</option>
+                <option value="Behavioral Management Plan">Behavioral Management Plan</option>
+                <option value="Individualized Instruction">Individualized Instruction</option>
+                <option value="Peer Tutoring">Peer Tutoring</option>
+                <option value="Use of Audio Recordings">Use of Audio Recordings</option>
+                <option value="Priority Seating During Testing">Priority Seating During Testing</option>
+                <option value="Written Instructions">Written Instructions</option>
                 <option value="Other">Other</option>
             </select>
+        </div>
+
+        <div>
+            <h2 class="section-title">Parent Information</h2>
+            <label for="parentName">Parent/Guardian Name:</label>
+            <input type="text" id="parentName" name="parentName">
+
+            <label for="parentPhone">Parent/Guardian Phone Number:</label>
+            <input type="text" id="parentPhone" name="parentPhone">
+
+            <label for="parentEmail">Parent/Guardian Email Address:</label>
+            <input type="text" id="parentEmail" name="parentEmail">
         </div>
 
         <div>
@@ -185,39 +234,11 @@
                 <h2 class="section-title">Signatory Page</h2>
                 <label for="parentSignature">Parent Signature:</label>
                 <div class="signature-line" id="parentSignature"></div>
-                <label for="parentName">Parent Name (Printed):</label>
-                <input type="text" id="parentName" name="parentName">
+                <label for="parentNamePrinted">Parent Name (Printed):</label>
+                <input type="text" id="parentNamePrinted" name="parentNamePrinted">
             </div>
 
             <div>
                 <label for="studentSignature">Student Signature:</label>
                 <div class="signature-line" id="studentSignature"></div>
-                <label for="studentName">Student Name (Printed):</label>
-                <input type="text" id="studentName" name="studentName">
-
-                <label for="caseManagerSignature">Case Manager Signature:</label>
-                <div class="signature-line" id="caseManagerSignature"></div>
-                <label for="caseManagerName">Case Manager Name (Printed):</label>
-                <input type="text" id="caseManagerName" name="caseManagerName">
-
-                <label for="adminSignature">School Administrator Signature:</label>
-                <div class="signature-line" id="adminSignature"></div>
-                <label for="adminName">Administrator Name (Printed):</label>
-                <input type="text" id="adminName" name="adminName">
-            </div>
-        </div>
-
-        <div class="submit-container">
-            <button onclick="submitForm()">SUBMIT and PRINT</button>
-        </div>
-    </div>
-
-    <script>
-        // Function to trigger printing the form
-        function submitForm() {
-            window.print();
-        }
-    </script>
-
-</body>
-</html>
+                <label for="studentName
