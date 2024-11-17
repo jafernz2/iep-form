@@ -58,11 +58,28 @@
             height: 100px;
         }
 
-        /* Accommodations Multi-Select */
-        select[multiple] {
-            height: 200px;
+        /* Accommodations Checkbox Layout */
+        .accommodation-list {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 10px;
+            margin-top: 10px;
         }
 
+        .accommodation-list label {
+            display: flex;
+            align-items: center;
+        }
+
+        .accommodation-list input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .accommodation-details {
+            margin-top: 20px;
+        }
+
+        /* Submit Button */
         .submit-container {
             text-align: center;
             margin-top: 30px;
@@ -185,29 +202,33 @@
 
         <div>
             <h2 class="section-title">Accommodations</h2>
-            <label for="accommodations">Select Accommodations (Multiple selection allowed):</label>
-            <select id="accommodations" name="accommodations[]" multiple size="12">
-                <option value="Extended Time">Extended Time</option>
-                <option value="Preferential Seating">Preferential Seating</option>
-                <option value="Note Taker">Note Taker</option>
-                <option value="Breaks During Testing">Breaks During Testing</option>
-                <option value="Use of Calculator">Use of Calculator</option>
-                <option value="Speech-to-Text Technology">Speech-to-Text Technology</option>
-                <option value="Small Group Instruction">Small Group Instruction</option>
-                <option value="Behavioral Support">Behavioral Support</option>
-                <option value="Modified Assignments">Modified Assignments</option>
-                <option value="Frequent Feedback">Frequent Feedback</option>
-                <option value="Visual Aids">Visual Aids</option>
-                <option value="Reduced Distractions">Reduced Distractions</option>
-                <option value="Frequent Check-ins">Frequent Check-ins</option>
-                <option value="Behavioral Management Plan">Behavioral Management Plan</option>
-                <option value="Individualized Instruction">Individualized Instruction</option>
-                <option value="Peer Tutoring">Peer Tutoring</option>
-                <option value="Use of Audio Recordings">Use of Audio Recordings</option>
-                <option value="Priority Seating During Testing">Priority Seating During Testing</option>
-                <option value="Written Instructions">Written Instructions</option>
-                <option value="Other">Other</option>
-            </select>
+            <div class="accommodation-list">
+                <label><input type="checkbox" name="accommodations" value="Extended Time"> Extended Time</label>
+                <label><input type="checkbox" name="accommodations" value="Preferential Seating"> Preferential Seating</label>
+                <label><input type="checkbox" name="accommodations" value="Note Taker"> Note Taker</label>
+                <label><input type="checkbox" name="accommodations" value="Breaks During Testing"> Breaks During Testing</label>
+                <label><input type="checkbox" name="accommodations" value="Use of Calculator"> Use of Calculator</label>
+                <label><input type="checkbox" name="accommodations" value="Speech-to-Text Technology"> Speech-to-Text Technology</label>
+                <label><input type="checkbox" name="accommodations" value="Small Group Instruction"> Small Group Instruction</label>
+                <label><input type="checkbox" name="accommodations" value="Behavioral Support"> Behavioral Support</label>
+                <label><input type="checkbox" name="accommodations" value="Modified Assignments"> Modified Assignments</label>
+                <label><input type="checkbox" name="accommodations" value="Frequent Feedback"> Frequent Feedback</label>
+                <label><input type="checkbox" name="accommodations" value="Visual Aids"> Visual Aids</label>
+                <label><input type="checkbox" name="accommodations" value="Reduced Distractions"> Reduced Distractions</label>
+                <label><input type="checkbox" name="accommodations" value="Frequent Check-ins"> Frequent Check-ins</label>
+                <label><input type="checkbox" name="accommodations" value="Behavioral Management Plan"> Behavioral Management Plan</label>
+                <label><input type="checkbox" name="accommodations" value="Individualized Instruction"> Individualized Instruction</label>
+                <label><input type="checkbox" name="accommodations" value="Peer Tutoring"> Peer Tutoring</label>
+                <label><input type="checkbox" name="accommodations" value="Use of Audio Recordings"> Use of Audio Recordings</label>
+                <label><input type="checkbox" name="accommodations" value="Priority Seating During Testing"> Priority Seating During Testing</label>
+                <label><input type="checkbox" name="accommodations" value="Written Instructions"> Written Instructions</label>
+                <label><input type="checkbox" name="accommodations" value="Other"> Other</label>
+            </div>
+
+            <div class="accommodation-details">
+                <label for="accommodationDetails">Details of Accommodations (if any selected):</label>
+                <textarea id="accommodationDetails" name="accommodationDetails" placeholder="Provide additional information about the accommodations selected"></textarea>
+            </div>
         </div>
 
         <div>
