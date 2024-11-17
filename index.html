@@ -3,222 +3,221 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IEP Form</title>
+    <title>IEP/504 Plan Form</title>
     <style>
+        /* General Body Styles */
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f4f4f9;
-        }
-        h1 {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f7fc;
             color: #333;
         }
-        .container {
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            color: #003366;
+        }
+
+        .form-container {
+            width: 100%;
             max-width: 800px;
             margin: 0 auto;
-            background-color: white;
             padding: 20px;
-            border-radius: 8px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .form-group {
-            margin-bottom: 15px;
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #003366;
         }
-        .form-group label {
-            font-weight: bold;
+
+        label {
             display: block;
-            margin-bottom: 5px;
+            font-weight: bold;
+            margin-top: 10px;
         }
-        .form-group input, .form-group select, .form-group textarea {
+
+        input[type="text"], select, textarea {
             width: 100%;
             padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
+            margin-top: 5px;
             font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
         }
-        .form-group textarea {
+
+        textarea {
             resize: vertical;
-            min-height: 100px;
+            height: 100px;
         }
-        .form-group button {
-            background-color: #4CAF50;
+
+        /* Accommodations Multi-Select */
+        select[multiple] {
+            height: 200px;
+        }
+
+        .submit-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .submit-container button {
+            background-color: #007BFF;
             color: white;
             border: none;
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 25px;
+            font-size: 18px;
             cursor: pointer;
-            border-radius: 4px;
-        }
-        .form-group button:hover {
-            background-color: #45a049;
-        }
-        .signature-section {
-            border-top: 2px solid #ccc;
-            padding-top: 20px;
-            margin-top: 20px;
-        }
-        .signature-group {
-            display: flex;
-            justify-content: space-between;
-        }
-        .signature-group input {
-            width: 45%;
-        }
-        .form-group input[type="date"] {
-            width: auto;
-        }
-        .info-section {
-            background-color: #f9f9f9;
-            padding: 15px;
             border-radius: 8px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
+            transition: background-color 0.3s ease;
         }
-        .info-section h2 {
-            font-size: 20px;
+
+        .submit-container button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Confidentiality Notice */
+        .confidentiality {
+            margin-top: 30px;
+            font-size: 14px;
+            background-color: #e9f7fe;
+            border: 1px solid #bdd7ee;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .signatory {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .signatory input {
+            width: 100%;
+        }
+
+        .signatory .signature-line {
+            border-bottom: 1px solid #333;
+            padding: 5px;
             margin-bottom: 10px;
         }
-        .info-section p {
-            font-size: 16px;
+
+        /* Print Styles */
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .form-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+
+            .submit-container, .confidentiality {
+                display: none;
+            }
+
+            .form-container h1 {
+                text-align: center;
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Individualized Education Plan (IEP) Form</h1>
 
-        <!-- Information Section -->
-        <div class="info-section">
-            <h2>Important Information about this IEP Document</h2>
-            <p>This is an Individualized Education Plan (IEP) document created for Inferno Schools. It is designed to meet the standards set by the Missouri Department of Elementary and Secondary Education (DESE) for IEPs. This document outlines the educational goals, services, and accommodations for the student.</p>
-            <p><strong>Confidentiality Notice:</strong> This is a confidential document containing sensitive information about the student's educational needs. It should only be shared with authorized personnel involved in the student's education and care.</p>
-            <p>Please ensure that the information contained within this document is handled appropriately and in compliance with confidentiality laws and school policies.</p>
+    <div class="form-container">
+        <h1>IEP/504 Plan Form</h1>
+
+        <div>
+            <h2 class="section-title">Student Information</h2>
+            <label for="studentId">Student ID Number:</label>
+            <input type="text" id="studentId" name="studentId">
+
+            <label for="iepYear">Year of IEP/504:</label>
+            <input type="text" id="iepYear" name="iepYear">
+
+            <label for="planType">Plan Type (IEP or 504):</label>
+            <select id="planType" name="planType">
+                <option value="IEP">IEP</option>
+                <option value="504">504</option>
+            </select>
         </div>
 
-        <form action="#" method="post" id="iepForm">
-            <!-- Student Information Section -->
-            <h2>Student Information</h2>
-            <div class="form-group">
-                <label for="studentName">Student Name</label>
-                <input type="text" id="studentName" name="studentName" required>
+        <div>
+            <h2 class="section-title">Accommodations</h2>
+            <label for="accommodations">Select Accommodations (Multiple selection allowed):</label>
+            <select id="accommodations" name="accommodations[]" multiple size="10">
+                <option value="Extended Time">Extended Time</option>
+                <option value="Preferential Seating">Preferential Seating</option>
+                <option value="Note Taker">Note Taker</option>
+                <option value="Breaks During Testing">Breaks During Testing</option>
+                <option value="Use of Calculator">Use of Calculator</option>
+                <option value="Speech-to-Text Technology">Speech-to-Text Technology</option>
+                <option value="Small Group Instruction">Small Group Instruction</option>
+                <option value="Behavioral Support">Behavioral Support</option>
+                <option value="Modified Assignments">Modified Assignments</option>
+                <option value="Frequent Feedback">Frequent Feedback</option>
+                <option value="Visual Aids">Visual Aids</option>
+                <option value="Reduced Distractions">Reduced Distractions</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div>
+            <h2 class="section-title">Confidentiality Notice</h2>
+            <div class="confidentiality">
+                <p>This form contains confidential information that is protected under the Family Educational Rights and Privacy Act (FERPA). Disclosure of this information is prohibited without consent from the student’s parent or guardian.</p>
             </div>
-            <div class="form-group">
-                <label for="studentDOB">Date of Birth</label>
-                <input type="date" id="studentDOB" name="studentDOB" required>
-            </div>
-            <div class="form-group">
-                <label for="studentGrade">Grade Level</label>
-                <input type="text" id="studentGrade" name="studentGrade" required>
-            </div>
-            <div class="form-group">
-                <label for="studentID">Student ID Number</label>
-                <input type="text" id="studentID" name="studentID" required>
-            </div>
-            <div class="form-group">
-                <label for="enrollmentLocation">Enrollment Location</label>
-                <input type="text" id="enrollmentLocation" name="enrollmentLocation" required>
-            </div>
-            <div class="form-group">
-                <label for="schoolYear">School Year</label>
-                <input type="text" id="schoolYear" name="schoolYear" required>
-            </div>
-            
-            <!-- Parent/Guardian Information -->
-            <div class="form-group">
-                <label for="guardianName">Guardian Name</label>
-                <input type="text" id="guardianName" name="guardianName" required>
-            </div>
-            <div class="form-group">
-                <label for="guardianContact">Guardian Contact Number</label>
-                <input type="tel" id="guardianContact" name="guardianContact" required>
+        </div>
+
+        <div class="signatory">
+            <div>
+                <h2 class="section-title">Signatory Page</h2>
+                <label for="parentSignature">Parent Signature:</label>
+                <div class="signature-line" id="parentSignature"></div>
+                <label for="parentName">Parent Name (Printed):</label>
+                <input type="text" id="parentName" name="parentName">
             </div>
 
-            <!-- Educational Goals Section -->
-            <div class="form-group">
-                <label for="goals">Educational Goals</label>
-                <textarea id="goals" name="goals" placeholder="Describe the student's educational goals" required></textarea>
-            </div>
+            <div>
+                <label for="studentSignature">Student Signature:</label>
+                <div class="signature-line" id="studentSignature"></div>
+                <label for="studentName">Student Name (Printed):</label>
+                <input type="text" id="studentName" name="studentName">
 
-            <!-- Services Section -->
-            <div class="form-group">
-                <label for="services">Required Services</label>
-                <textarea id="services" name="services" placeholder="List the services needed for the student" required></textarea>
-            </div>
+                <label for="caseManagerSignature">Case Manager Signature:</label>
+                <div class="signature-line" id="caseManagerSignature"></div>
+                <label for="caseManagerName">Case Manager Name (Printed):</label>
+                <input type="text" id="caseManagerName" name="caseManagerName">
 
-            <!-- Accommodations Section -->
-            <div class="form-group">
-                <label for="accommodations">Accommodations</label>
-                <textarea id="accommodations" name="accommodations" placeholder="Describe any accommodations provided to the student" required></textarea>
+                <label for="adminSignature">School Administrator Signature:</label>
+                <div class="signature-line" id="adminSignature"></div>
+                <label for="adminName">Administrator Name (Printed):</label>
+                <input type="text" id="adminName" name="adminName">
             </div>
+        </div>
 
-            <!-- Progress Monitoring Section -->
-            <div class="form-group">
-                <label for="progressMonitoring">Progress Monitoring Plan</label>
-                <textarea id="progressMonitoring" name="progressMonitoring" placeholder="Describe how progress will be monitored" required></textarea>
-            </div>
-
-            <!-- Case Manager Section -->
-            <div class="form-group">
-                <label for="caseManagerName">Case Manager's Name</label>
-                <input type="text" id="caseManagerName" name="caseManagerName" required>
-            </div>
-
-            <!-- Administration Section -->
-            <div class="form-group">
-                <label for="adminName">Administrator's Name</label>
-                <input type="text" id="adminName" name="adminName" required>
-            </div>
-
-            <!-- School Information Section -->
-            <h2>School Information</h2>
-            <div class="form-group">
-                <label for="districtCode">District Code</label>
-                <input type="text" id="districtCode" name="districtCode" value="99142" readonly>
-            </div>
-            <div class="form-group">
-                <label for="districtName">District Name</label>
-                <input type="text" id="districtName" name="districtName" value="Inferno School District" readonly>
-            </div>
-            
-            <!-- Signature Page Section -->
-            <div class="signature-section">
-                <h3>Signatures</h3>
-                <div class="form-group signature-group">
-                    <div>
-                        <label for="parentSignature">Parent/Guardian Signature</label>
-                        <input type="text" id="parentSignature" name="parentSignature" required>
-                        <label for="parentDate">Date</label>
-                        <input type="date" id="parentDate" name="parentDate" required>
-                    </div>
-                    <div>
-                        <label for="caseManagerSignature">Case Manager's Signature</label>
-                        <input type="text" id="caseManagerSignature" name="caseManagerSignature" required>
-                        <label for="caseManagerDate">Date</label>
-                        <input type="date" id="caseManagerDate" name="caseManagerDate" required>
-                    </div>
-                </div>
-                <div class="form-group signature-group">
-                    <div>
-                        <label for="adminSignature">Administrator's Signature</label>
-                        <input type="text" id="adminSignature" name="adminSignature" required>
-                        <label for="adminDate">Date</label>
-                        <input type="date" id="adminDate" name="adminDate" required>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Submit Button -->
-            <div class="form-group">
-                <button type="button" onclick="printForm()">Submit and Print</button>
-            </div>
-        </form>
+        <div class="submit-container">
+            <button onclick="submitForm()">SUBMIT and PRINT</button>
+        </div>
     </div>
 
     <script>
-        function printForm() {
-            // Trigger the print dialog
+        // Function to trigger printing the form
+        function submitForm() {
             window.print();
         }
     </script>
+
 </body>
 </html>
